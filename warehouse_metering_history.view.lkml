@@ -25,7 +25,7 @@ view: warehouse_metering_history {
 
   dimension: date_join {
     type: number
-    sql: concat(lpad(hour(${end_raw}),2,0),lpad(minute(${end_raw}),2,0));;
+    sql: concat(lpad(hour(${end_date}),2,0),lpad(minute(${end_date}),2,0));;
   }
 
   dimension_group: start {
