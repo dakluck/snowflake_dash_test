@@ -1,5 +1,5 @@
 view: time_test {
-  sql_table_name: PUBLIC.TIME_TEST ;;
+  sql_table_name: PC_DAILEY_TEST.PUBLIC.TIME_TEST ;;
 
   dimension: id {
     primary_key: yes
