@@ -23,6 +23,11 @@ view: warehouse_metering_history {
     sql: ${TABLE}."END_TIME" ;;
   }
 
+  dimension: date_join {
+    type: number
+    sql: concat(lpad(hour(${end_raw}),2,0),lpad(minute(${end_raw}),2,0);;
+  }
+
   dimension_group: start {
     type: time
     timeframes: [

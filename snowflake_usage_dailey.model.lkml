@@ -14,6 +14,6 @@ explore: warehouse_metering_history {
   join: time_test {
     type: full_outer
     relationship: many_to_one
-    sql_on: ${time_test.hour} = hour(${warehouse_metering_history.end_hour}) and ${time_test.minute} = minute(${warehouse_metering_history.end_minute}) ;;
+    sql_on: ${time_test.date_join} = ${warehouse_metering_history.date_join};;
     }
 }

@@ -21,9 +21,8 @@ view: time_test {
     type: string
     sql: ${TABLE}."MINUTE" ;;
   }
-
-  measure: count {
-    type: count
-    drill_fields: [id]
+  dimension: date_join {
+    type: number
+    sql: concat(lpad(${hour},2,0),lpad(${minute},2,0));;
   }
 }
