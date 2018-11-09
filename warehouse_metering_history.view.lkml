@@ -11,6 +11,9 @@ view: warehouse_metering_history {
     timeframes: [
       raw,
       time,
+      hour12,
+      minute,
+      hour,
       date,
       week,
       month,
@@ -44,8 +47,13 @@ view: warehouse_metering_history {
     sql: ${TABLE}."WAREHOUSE_NAME" ;;
   }
 
-  measure: elapsed_Time {
+  dimension: elapsed_time {
     type: number
     sql: datediff(seconds, ${start_date} ::timestamp, ${end_date}::timestamp);;
+
+  }
+  measure: total_time_minutes {
+    type: sum
+    sql: ${elapsed_time}/60 ;;
   }
 }
